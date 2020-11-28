@@ -67,7 +67,7 @@ echo "Install Python packages? [y,n]"
 read installPython
 if [[ $installPython == "y" ]]; then
     for package in $python_packs; do
-        installPython $package
+        install_python $package
     done
 fi
 

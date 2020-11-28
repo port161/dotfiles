@@ -39,21 +39,30 @@ echo "Setup fonts? [y,n]"
 read setupFonts
 if [[ $setupFonts == "y" ]]; then
     #fonts
-    echo "Downloading powerline:"
     mkdir -pv ~/.fonts/
 
-    #powerline
-    cd ~/
-    git clone https://github.com/powerline/fonts.git --depth=1
-    ./fonts/install.sh
-    rm -rf fonts
-    ln -sv ~/.local/share/fonts ~/.fonts/powerline_fonts
+    echo "Powerline? [y,n] "
+    read yn
+    if [[ $yn == "y" ]]; then
+        echo "Downloading powerline:"
+        #powerline
+        cd ~/
+        git clone https://github.com/powerline/fonts.git --depth=1
+        ./fonts/install.sh
+        rm -rf fonts
+        ln -sv ~/.local/share/fonts ~/.fonts/powerline_fonts
+    fi
 
-    #fontawesome
-    echo "Downloading fontawesome:"
-    git clone https://github.com/FortAwesome/Font-Awesome
-    mv Font-Awesome/fonts/fontawesome-webfont.ttf ~/.fonts/
-    rm -rf Font-Awesome
+    
+    echo "Font Awesome? [y,n] "
+    read yn
+    if [[ $yn == "y" ]]; then
+        #fontawesome
+        echo "Downloading fontawesome:"
+        git clone https://github.com/FortAwesome/Font-Awesome
+        mv Font-Awesome/fonts/fontawesome-webfont.ttf ~/.fonts/
+        rm -rf Font-Awesome
+    fi
 
     fc-cache -fv
 fi

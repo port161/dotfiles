@@ -50,7 +50,7 @@ install_python()
 
 }
 
-essentials="vim i3 i3blocks i3exit dmenu git zsh tmux pulseaudio pa-applet pavucontrol rxvt-unicode universal-ctags-git w3m wget feh mutt urlview arandr dunst mlocate tk python-pip openssh networkmanager network-manager-applet xorg lightdm lightdm-gtk-greeter qutebrowser sxiv " 
+essentials="vim tmux fontconfig i3 i3blocks i3exit dmenu git zsh pulseaudio pa-applet pavucontrol rxvt-unicode universal-ctags-git w3m wget feh mutt urlview arandr dunst mlocate tk python-pip openssh networkmanager network-manager-applet xorg lightdm lightdm-gtk-greeter qutebrowser sxiv " 
 optional="firefox vlc zathura cmus lyvi-git gedit gedit-plugins dolphin libreoffice steam gimp inkscape virtualbox puddletag deluge qtiplot gnome-calculator texlive-core kalu"
 python_packs="numpy scipy matplotlib pandas keras tensorflow progressbar "
 

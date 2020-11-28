@@ -1,16 +1,16 @@
 #settings
-c.zoom.default=180
+c.zoom.default=100
 c.tabs.show = 'multiple'
 c.tabs.select_on_remove = 'prev'
 c.scrolling.smooth= True
 c.url.start_pages='http://duckduckgo.com'
 c.url.default_page='http://duckduckgo.com'
 c.url.searchengines= {
-		"DEFAULT": "https://www.google.co.uk/search?q={}",
+		"DEFAULT": "https://duckduckgo.com/?q={}",
+		"go": "https://www.google.co.uk/search?q={}",
 		"yt": "https://www.youtube.com/results?search_query={}",
 		"arch": "https://wiki.archlinux.org/?search={}",
 		"w": "https://en.wikipedia.org/wiki/{}",
-		"du": "https://duckduckgo.com/?q={}",
 		"am": "https://duckduckgo.com/?q=!azuk {}",
 		"eb": "https://duckduckgo.com/?q=!e.uk {}",
 		}
@@ -70,7 +70,8 @@ c.colors.downloads.bar.bg = '#132b13'
 c.colors.messages.info.bg = '#132b13'
 
 #fonts
-c.fonts.tabs = '20pt Droid '
+c.fonts.tabs.selected = '20pt Droid '
+c.fonts.tabs.unselected = '20pt Droid '
 c.fonts.completion.category = '20pt Droid '
 c.fonts.completion.entry = '20pt Droid '
 c.fonts.statusbar = '20pt Droid '

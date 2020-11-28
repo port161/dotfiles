@@ -11,6 +11,13 @@ if [[ $setupVim == "y" ]]; then
     mkdir -pv ~/.vim/undodir/
 fi
 
+#ranger setup
+echo "Setup Ranger? [y,n]"
+read setupRanger
+if [[ $setupRanger == "y" ]]; then
+    git clone https://github.com/ranger/ranger ~/ranger/
+fi
+
 echo "Symlink dotfiles? [y,n]"
 read symlinkDots
 if [[ $symlinkDots == "y" ]]; then

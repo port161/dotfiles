@@ -41,9 +41,11 @@ install()
 	fi
 }
 
-essentials="vim i3 i3status i3exit dmenu git zsh ranger tmux conky compton pulseaudio pa-applet pavucontrol rxvt-unicode universal-ctags-git w3m wget feh rofi mutt urlview arandr dunst mlocate gnome-system-monitor tk python-pip openssh networkmanager network-manager-applet xorg lightdm lightdm-gtk-greeter"
-optional="qutebrowser firefox vlc zathura cmus lyvi-git  gedit gedit-plugins dolphin libreoffice steam gimp inkscape virtualbox puddletag deluge qtiplot gnome-calculator sxiv texlive-core kalu"
+essentials="vim i3 i3status i3exit dmenu git zsh tmux conky compton pulseaudio pa-applet pavucontrol rxvt-unicode universal-ctags-git w3m wget feh rofi mutt urlview arandr dunst mlocate gnome-system-monitor tk python-pip openssh networkmanager network-manager-applet xorg lightdm lightdm-gtk-greeter qutebrowser"
+optional="firefox vlc zathura cmus lyvi-git  gedit gedit-plugins dolphin libreoffice steam gimp inkscape virtualbox puddletag deluge qtiplot gnome-calculator sxiv texlive-core kalu"
 python_packs="numpy scipy matplotlib pandas keras tensorflow progressbar "
+
+
 
 echo "Install essential packages? [y,n]"
 read installEssential

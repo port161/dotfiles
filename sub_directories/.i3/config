@@ -344,6 +344,7 @@ exec_always --no-startup-id setxkbmap -option caps:escape
 exec xrdb ~/.Xresources #Urxvt terminal settings
 
 #Startup Monitor setup
+exec displayStartup.sh
 #exec xrandr --output $(xrandr | grep -w connected | awk -F' ' '{print $1}') --primary --mode 1920x1080 --pos 0x0 --rotate normal
 #exec xrandr --output HDMI1 --primary --mode 1920x1080 --pos 1600x0 --rotate normal --output VIRTUAL1 --off --output eDP1 --mode 1600x900 --pos 0x0 --rotate normal
 #exec_always feh --bg-scale ~/Pictures/Wallpapers/wallpaper.jpg #wallpaper

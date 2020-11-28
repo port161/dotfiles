@@ -2,18 +2,25 @@
 
 cd ~/dotfiles/setup/
 
-echo "Performing essential tasks:"
 #vim setup 
-echo "Configuring Vim"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-mkdir -pv ~/.vim/undodir/
+echo "Setup Vim? [y,n]"
+read setupVim
+if [[ $setupVim == "y" ]]; then
+    echo "Configuring Vim"
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    mkdir -pv ~/.vim/undodir/
+fi
 
-#Symlink dotfiles
-echo "Symlinking dotfiles"
-cd ~/dotfiles/
-./symLinkDots.sh
+echo "Symlink dotfiles? [y,n]"
+read symlinkDots
+if [[ $symlinkDots == "y" ]]; then
+    #Symlink dotfiles
+    echo "Symlinking dotfiles"
+    ./symLinkDots.sh
 
-xrdb .Xresources
+    #xresources
+    xrdb ~/.Xresources
+fi
 
 echo "Install software? [y,n]"
 read installSoftware

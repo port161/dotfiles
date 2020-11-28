@@ -41,11 +41,18 @@ install()
 	fi
 }
 
-essentials="vim i3 i3status i3exit dmenu git zsh tmux conky compton pulseaudio pa-applet pavucontrol rxvt-unicode universal-ctags-git w3m wget feh rofi mutt urlview arandr dunst mlocate gnome-system-monitor tk python-pip openssh networkmanager network-manager-applet xorg lightdm lightdm-gtk-greeter qutebrowser"
-optional="firefox vlc zathura cmus lyvi-git  gedit gedit-plugins dolphin libreoffice steam gimp inkscape virtualbox puddletag deluge qtiplot gnome-calculator sxiv texlive-core kalu"
+install_python()
+{
+    read -p "Install $1? (Y/N) " yn
+    if [[ $yn == "y" ]]; then
+        sudo pip install $1
+    fi
+
+}
+
+essentials="vim i3 i3blocks i3exit dmenu git zsh tmux pulseaudio pa-applet pavucontrol rxvt-unicode universal-ctags-git w3m wget feh mutt urlview arandr dunst mlocate tk python-pip openssh networkmanager network-manager-applet xorg lightdm lightdm-gtk-greeter qutebrowser sxiv " 
+optional="firefox vlc zathura cmus lyvi-git gedit gedit-plugins dolphin libreoffice steam gimp inkscape virtualbox puddletag deluge qtiplot gnome-calculator texlive-core kalu"
 python_packs="numpy scipy matplotlib pandas keras tensorflow progressbar "
-
-
 
 echo "Install essential packages? [y,n]"
 read installEssential
@@ -60,7 +67,7 @@ echo "Install Python packages? [y,n]"
 read installPython
 if [[ $installPython == "y" ]]; then
     for package in $python_packs; do
-        sudo pip install $package
+        installPython $package
     done
 fi
 

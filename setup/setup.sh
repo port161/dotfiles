@@ -67,6 +67,13 @@ if [[ $setupFonts == "y" ]]; then
     fc-cache -fv
 fi
 
+echo "Setup default wallpaper? [y,n] "
+read yn
+if [[ $yn == "y" ]]; then
+    mkdir -p ~/Pictures/Wallpapers/
+    cp ~/dotfiles/wallpaper.jpg ~/Pictures/Wallpapers/
+fi
+
 echo ""
 echo "You may wish to do the following:"
 echo "Pull own git repos"

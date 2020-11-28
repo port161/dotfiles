@@ -1,0 +1,14 @@
+application/pdf; zathura %s
+application/msword; libreoffice %s
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; libreoffice %s
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; libreoffice %s
+
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
+#Images
+image/jpeg; feh %s
+image/pjpeg; feh %s
+image/png; feh %s
+image/tiff; feh %s
+image/gif; sxiv -a %s
+

@@ -1,0 +1,30 @@
+priority -1
+
+snippet for
+for ${1:count} in range(${2:0},${3:10},${4:1}):
+	$0
+endsnippet
+
+snippet fors
+for ${1:count} in range(${2:0},np.size(${3:array},axis=${4:0})):
+	$0
+endsnippet
+
+snippet plot
+x=np.arange(${1:x0},${2:x},${3:dx})
+y=${4:f(x)}
+
+plt.plot(x,y)
+plt.show()
+$0
+endsnippet
+
+snippet to_del
+to_del=[]
+for n in range(0,np.size(${1:array},axis=0)):
+	if $1[n] ${2:condition}:
+		to_del = np.append(to_del,n)
+for n in range(np.size(to_del,axis=0)-1,-1,-1):
+	$1=np.delete($1,to_del[n])
+	$0
+endsnippet

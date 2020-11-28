@@ -1,0 +1,133 @@
+source ~/.mutt/mutt_account_settings
+
+###Settings##
+#Load folders to sidebar
+set sidebar_visible = yes
+set mail_check_stats = yes
+set sidebar_format = "%B%?N? [%N]?%* %?N?%N/?%S"
+
+set mail_check_stats_interval=1 #for correct stats on account switch
+set sleep_time = 0 #speed up folder changes
+
+#show emails above pager
+set pager_index_lines=8 
+
+set editor='vim'
+set smart_wrap
+set include=yes #include prev emails in reply
+set fast_reply #automatically fill to: and subject: in reply
+
+set sort = 'Threads'
+set sort_aux = 'reverse-last-date-received'
+
+set timeout=10
+set beep_new = yes
+
+#set arrow_cursor
+#set narrow_tree
+
+#Skip press any key to continue
+set wait_key = no
+
+#text flowing when composing emails
+set text_flowed =  yes
+
+#pass emails through script to add sender to aliases
+unset query_command
+set display_filter = '~/.mutt/display_filter.sh'
+set alias_file = ~/.mutt/aliases.txt
+source $alias_file
+#bind editor <Tab> complete
+#bind editor ^T complete-query
+
+#viewing html emails in w3m
+unignore Content-Type #to grep to see if html mail
+auto_view text/html 
+alternative_order text/plain text/html 
+set mailcap_path = ~/.mutt/mailcap
+macro compose H '^T^A^Ktext/html<enter>'
+set pipe_decode=yes
+macro pager I '|~/.mutt/html_viewer.sh<enter>'
+
+#viewing url links in emails with urlview
+macro pager \\u "<enter-command>set pipe_decode = yes<enter><pipe-message>urlview<enter><enter-command>set pipe_decode = no<enter>" "view URLs"
+
+##colors##
+color normal	white black
+color attachment brightyellow black
+color hdrdefault cyan black
+color indicator brightyellow cyan
+color markers	brightred black
+color quoted	green black
+color signature cyan black
+color status	brightyellow blue#brightgreen blue
+color tilde	blue black
+color tree	red black
+
+color index	red black ~D
+color index	magenta black ~T
+
+color header	brightgreen black ^From:
+color header	brightcyan black ^To:
+color header	brightcyan black ^Reply-To:
+color header	brightcyan black ^Cc:
+color header	brightblue black ^Subject:
+
+color index brightyellow black "~O" # old messages green
+color index brightyellow black "~N" # new messages green
+
+color sidebar_divider brightyellow black
+color sidebar_new brightyellow black
+
+# identifies email addresses
+color body	brightred black [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+
+# identifies URLs
+color body	brightblue black (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+
+##bindings##
+bind index l display-message
+bind index gg first-entry
+bind index G last-entry
+bind index h noop               # Disable h#scrolling by line
+bind index J next-page
+bind index K previous-page
+
+bind pager h exit
+bind pager gg top
+bind pager G bottom
+bind pager j next-line
+bind pager R group-reply
+bind pager k previous-line
+#bind pager J next-line next-line
+#bind pager K previous-page
+macro pager J "<next-line><next-line><next-line><next-line><next-line><next-line><next-line><next-line><next-line><next-line>"
+macro pager K "<previous-line><previous-line><previous-line><previous-line><previous-line><previous-line><previous-line><previous-line><previous-line><previous-line>"
+
+bind browser l select-entry
+bind browser L view-file
+bind browser gg first-entry
+bind browser G last-entry
+bind browser h exit
+
+bind attach h exit
+bind attach e edit-type # Edit MIME Types
+bind attach l view-attach
+
+bind compose l view-attach
+bind compose h exit
+
+bind index i limit
+
+#searching backwards
+bind index N search-opposite
+bind pager N search-opposite
+bind browser N search-opposite
+bind attach N search-opposite
+
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Cl sidebar-open
+bind index,pager \Ct sidebar-toggle-visible
+
+macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'

@@ -1,0 +1,14 @@
+if
+ife
+el
+eif
+wh
+for
+parfor
+fun
+[${3:out}]
+try
+switch
+@
+cl
+${1:`vim_snippets#Filename("$1",

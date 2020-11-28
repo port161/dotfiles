@@ -1,0 +1,103 @@
+#if __has_include(".extend.Xresources")
+#include ".extend.Xresources"
+#endif
+
+! ^ The above lines are no comments!
+! Leave them as they are if a file ~/.extend.Xresources is being used on your system.
+! config can be added there or also here below.
+! For comments use "!"
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+!!Defaults-URxvt!!
+!URxvt*foreground: white
+!URxvt.background: black
+!#181512
+
+URxvt*.foreground:   #18f018
+URxvt.background:    #1c1813
+URxvt*.cursorColor:  #18f018
+URxvt*.color0:       #1c1c1c
+URxvt*.color8:       #4d4d4d
+URxvt*.color1:       #03994b
+URxvt*.color9:       #03994b
+URxvt*.color2:       #60ff60
+URxvt*.color10:      #70ff70
+URxvt*.color3:       #bde106
+URxvt*.color11:      #ffff54
+URxvt*.color4:       #027138
+URxvt*.color12:      #027138
+URxvt*.color5:       #ac7514
+URxvt*.color13:      #ac6a07
+URxvt*.color6:       #228da4
+URxvt*.color14:      #18b2b2
+URxvt*.color7:       #8c8c8c
+URxvt*.color15:      #eeeeee
+
+URxvt.font: xft:Dejavu Sans Mono for Powerline:size=12
+URxvt*scrollBar: false
+
+!urxvt*transparent: true
+!urxvt.shading: 10
+
+!!Defaults-XTerm!!
+!XTerm*foreground: white
+!XTerm*background: black
+!XTerm*faceName: Fixed
+!XTerm*faceSize: 11
+!#101010
+
+XTerm*.foreground:   #555753
+XTerm*.background:   #18f018
+XTerm*.cursorColor:  #18f018
+XTerm*.color0:       #1c1c1c
+XTerm*.color8:       #4d4d4d
+XTerm*.color1:       #03994b
+XTerm*.color9:       #03994b
+XTerm*.color2:       #60ff60
+XTerm*.color10:      #70ff70
+XTerm*.color3:       #bde106
+XTerm*.color11:      #ffff54
+XTerm*.color4:       #027138
+XTerm*.color12:      #027138
+XTerm*.color5:       #ac7514
+XTerm*.color13:      #ac6a07
+XTerm*.color6:       #228da4
+XTerm*.color14:      #18b2b2
+XTerm*.color7:       #8c8c8c
+XTerm*.color15:      #eeeeee
+
+XTerm*faceName: DejaVu Sans Mono for powerline
+XTerm*faceSize: 11
+XTerm*scrollBar: false
+
+URxvt.perl-ext-common: default,clipboard
+URxvt.keysym.Control-Shift-C: perl:clipboard:copy
+URxvt.keysym.Control-Shift-V: perl:clipboard:paste
+
+!Disable symbol picker for copy/paste
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+
+rofi.font:	Iosevka 14
+rofi.separator-style: dash
+rofi.hide-scrollbar: false
+!rofi.opacity: 93
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+!rofi.color-window: #1c1813, argb:00000000, #1aa662
+rofi.color-window: #132b13, argb:00000000, #ffff54
+rofi.color-normal: argb:30000000, #84d498, argb:00000000, #ffff54, #2e3440
+rofi.color-active: argb:00000000, #50fa7b, argb:00000000, #85fa86, #2e3440
+rofi.color-urgent: argb:00000000, #1aa662, argb:00000000, #1aa662, #2e3440
+
+

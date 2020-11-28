@@ -1,0 +1,1 @@
+COMMAND cd ~/qutebrowser;python3 -m qutebrowser %s

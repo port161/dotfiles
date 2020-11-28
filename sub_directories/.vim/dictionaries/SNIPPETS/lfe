@@ -1,0 +1,6 @@
+defmo
+${1:`vim_snippets#Filename()`}
+def
+ltest
+${1:`vim_snippets#Filename()`}
+test
